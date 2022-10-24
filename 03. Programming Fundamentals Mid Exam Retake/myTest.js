@@ -30,7 +30,23 @@
 
 
 //cut elements from array
+
+//const array = ['-16', '-4', '-9', '-17'];
+// let index = array.indexOf('-16');
+// array.splice(index, 1);
+// console.log(array);
+
+//rotation arr
 const array = ['-16', '-4', '-9', '-17'];
-let index = array.indexOf('-16');
-array.splice(index,1);
+
+for (let i = 0; i < 2; i++) {
+    let getArrLength = array.length;
+    let getFirstItem = array.shift();
+
+    array.push(getFirstItem);
+
+    //array.splice(getArrLength, 1, getFirstItem);
+
+}
 console.log(array);
+
