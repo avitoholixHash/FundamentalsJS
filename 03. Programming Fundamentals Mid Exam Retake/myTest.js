@@ -37,16 +37,42 @@
 // console.log(array);
 
 //rotation arr
-const array = ['-16', '-4', '-9', '-17'];
+// const array = ['-16', '-4', '-9', '-17'];
 
-for (let i = 0; i < 2; i++) {
-    let getArrLength = array.length;
-    let getFirstItem = array.shift();
+// for (let i = 0; i < 2; i++) {
+//     let getArrLength = array.length;
+//     let getFirstItem = array.shift();
 
-    array.push(getFirstItem);
+//     array.push(getFirstItem);
 
-    //array.splice(getArrLength, 1, getFirstItem);
+//     //array.splice(getArrLength, 1, getFirstItem);
 
+// }
+// console.log(array);
+
+
+let arr = [2, 4, 2, 4, 2, 4]
+function sumPairs(arr) {
+    let sum = 0;
+    let counter = 0;
+    let index = 0;
+
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i++) {
+        counter++
+        sum += arr[i];
+        if (counter === 2) {
+
+            arr2.push(sum);
+            index++
+            sum = 0;
+            counter = 0;
+
+        }
+
+    }
+
+    return arr2;
 }
-console.log(array);
+console.log(sumPairs(arr));
 
