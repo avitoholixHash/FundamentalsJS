@@ -45,15 +45,15 @@ function zoo(input) {
     console.log('Animals:');
     for (const name in zoo) {
 
-        console.log(`${name} -> ${zoo[name].neddFood}g `);
+        console.log(` ${name} -> ${zoo[name].neddFood}g `);
 
     }
     console.log('Areas with hungry animals:');
     for (const name in zoo) {
 
-        if (zoo[name].neddFood > 0) {
-            zoo[name].neddFood = 1;
-            console.log(` ${zoo[name].area}: ${zoo[name].neddFood}`);
+        if (zoo[name].neddFood >= 0) {
+            let count = Number(!Object.hasOwnProperty(zoo[name].area));
+            console.log(` ${zoo[name].area}: ${count}`);
         }
     }
 
@@ -65,3 +65,12 @@ zoo(["Add: Adam-4500-ByTheCreek",
     "Add: Maya-1230-WaterfallArea",
     "Feed: Jamie-2000",
     "EndDay"])
+
+zoo(["Add: Jamie-600-WaterfallArea",
+    "Add: Maya-6570-WaterfallArea",
+    "Add: Adam-4500-ByTheCreek",
+    "Add: Bobbie-6570-WaterfallArea",
+    "Feed: Jamie-2000",
+    "Feed: Adam-2000",
+    "Feed: Adam-2500",
+    "EndDay"]);

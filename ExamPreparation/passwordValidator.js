@@ -7,11 +7,11 @@ function passwordValidator(input) {
     while (line != 'Complete') {
         let instruction = line.split(' ');
         let command = instruction.shift();
-
+        //mod for command line
         if (instruction[0] === 'Upper' || instruction[0] === 'Lower') {
             command += ` ${instruction[0]}`;
         }
-
+        //rite command line
         switch (command) {
             case 'Make Upper': {
                 let index = Number(instruction[1]);
