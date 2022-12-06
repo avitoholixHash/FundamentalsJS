@@ -7,7 +7,7 @@ function passwordValidator(input) {
     while (line != 'Complete') {
         let instruction = line.split(' ');
         let command = instruction.shift();
-        //mod for command line
+        //mod for command line, because of the space between the words
         if (instruction[0] === 'Upper' || instruction[0] === 'Lower') {
             command += ` ${instruction[0]}`;
         }
@@ -44,13 +44,13 @@ function passwordValidator(input) {
                 let value = Number(instruction[1]);
 
                 if (passWord.includes(char)) {
-                    let getIndexOnChar = passWord.indexOf(char)
-                    let getValuFromChar = char.charCodeAt(getIndexOnChar);
+                    let getIndex = passWord.indexOf(char)
+                    let getValuFromChar = char.charCodeAt();
 
                     let result = getValuFromChar + value;
                     let newChar = String.fromCharCode(result);
-
-                    let re = new RegExp(`${char}`, 'g');
+                    //Need to escape the * characters or maybe even others...:) 
+                    let re = new RegExp('\\' + `${char}`, 'g');
                     passWord = passWord.replace(re, newChar);
                     console.log(passWord);
                 }
@@ -64,13 +64,13 @@ function passwordValidator(input) {
 
                     if(passWord.length < 8){
                         console.log('Password must be at least 8 characters long!');
-                    }else if(passWord !== reg){
+                    }else if(!passWord.match(reg)){
                         console.log('PassworDAd must consist only of letters, digits and _!');
-                    }else if(passWord !== regUpperCase){
+                    }else if(!passWord.match(regUpperCase)){
                         console.log('Password must consist at least one uppercase letter!');
-                    }else if(passWord !== regLowerCase){
+                    }else if(!passWord.match(regLowerCase)){
                         console.log('Password must consist at least one lowercase letter!');
-                    }else if(passWord !== regDigit){
+                    }else if(!passWord.match(regDigit)){
                         console.log('Password must consist at least one digit!');
                     }
 
@@ -87,9 +87,18 @@ function passwordValidator(input) {
 
 }
 passwordValidator(['invalidpassword*',
-    'Add 2 p',
-    'Replace i -50',
-    'Replace * 10',
-    'Make Upper 2',
-    'Validation',
-    'Complete']);
+'Add 2 p',
+'Replace i -50',
+'Replace * 10',
+ 'Make Upper 2',
+'Validation',
+'Complete']);
+
+console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+
+passwordValidator(['123456789',
+'Insert 3 R',
+'Replace 5 15',
+'Validation',
+'Make Lower 3',
+'Complete']);

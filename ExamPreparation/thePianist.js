@@ -24,6 +24,7 @@ function thePianist(input) {
         let command = instructions.shift();
         //using different commands
         switch (command) {
+            
             case 'Add': {
                 let [name, composer, gamma] = instructions;
                 if (myPlayList.hasOwnProperty(name)) {
@@ -82,4 +83,4 @@ thePianist([
     'Remove|Clair de Lune',
     'ChangeKey|Moonlight Sonata|C# Major',
     'Stop'
-])
+]);
