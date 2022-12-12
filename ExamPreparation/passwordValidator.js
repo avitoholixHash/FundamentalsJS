@@ -51,6 +51,7 @@ function passwordValidator(input) {
                     let newChar = String.fromCharCode(result);
                     //Need to escape the * characters or maybe even others...:) 
                     let re = new RegExp('\\' + `${char}`, 'g');
+                    console.log(re);
                     passWord = passWord.replace(re, newChar);
                     console.log(passWord);
                 }

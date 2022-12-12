@@ -42,29 +42,18 @@ function zoo(input) {
         line = input.shift();
     }
 
-    console.log('Animals:');
     for (const name in zoo) {
-
-        console.log(` ${name} -> ${zoo[name].neddFood}g `);
-
-    }
-    console.log('Areas with hungry animals:');
-    for (const name in zoo) {
-
-        if (zoo[name].neddFood >= 0) {
-            let count = Number(!Object.hasOwnProperty(zoo[name].area));
-            console.log(` ${zoo[name].area}: ${count}`);
-        }
+       console.log(zoo[name].neddFood);
     }
 
 
     console.table(zoo);
 }
-zoo(["Add: Adam-4500-ByTheCreek",
-    "Add: Maya-7600-WaterfallArea",
-    "Add: Maya-1230-WaterfallArea",
-    "Feed: Jamie-2000",
-    "EndDay"])
+// zoo(["Add: Adam-4500-ByTheCreek",
+//     "Add: Maya-7600-WaterfallArea",
+//     "Add: Maya-1230-WaterfallArea",
+//     "Feed: Jamie-2000",
+//     "EndDay"])
 
 zoo(["Add: Jamie-600-WaterfallArea",
     "Add: Maya-6570-WaterfallArea",
